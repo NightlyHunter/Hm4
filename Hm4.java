@@ -4,6 +4,9 @@ import java.util.Arrays;
  * Created by night on 17.07.2017.
  */
 public class Hm4 {
+    static int c=1;
+    static int k=1;
+    static int l=1;
     public static void Count (int size){
         int a[]= new int[size];
         for (int i=0; i <a.length ; i++){
@@ -47,18 +50,29 @@ public class Hm4 {
         else System.out.println("Equal");
     }
     public static void CountR (int size){
-       if (size==1) {
-           System.out.println(1);
-       }
-       if (size>1){
-            System.out.println(size);
-            size--;
-            CountR(size);
-       }
 
+        System.out.println(c++);
+        if (c <= size){
+            CountR(size);
+        }
 
     }
+    public static void drawRectangleR(int a, int b) {
+
+        System.out.print("+ ");
+        k++;
+        if (k <= a){
+            drawRectangleR(a, b);
+        }
+        l++;
+        if(l <= b){
+            k = 1;
+            System.out.println();
+            drawRectangleR(a, b);
+        }
+    }
     public static void main(String[] args) {
-        CountR(14);
+
+        drawRectangleR(10,14);
     }
 }
